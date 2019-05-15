@@ -22,6 +22,7 @@ class MusicLibraryController
       puts "What would you like to do?"
       
       input = gets.strip
+<<<<<<< HEAD
 
     
      case input
@@ -46,6 +47,25 @@ class MusicLibraryController
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
+=======
+    end
+  end
+  
+  
+  def list_songs
+    Song.all.sort {|a,b| a.name <=> b.name}.each.with_index(1) do |song, i|
+      puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+    # Song.all.each_with_index {|song, i| puts "#{i+1}. #{song.artist} - #{song.name} - #{song.genre}"}
+    # binding.pry
+  end
+
+  # def list_songs
+  #   Song.all.sort_by(&:name).each.with_index(1) do |song, index|
+  #     puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+  #   end
+  # end
+>>>>>>> 0a41f2fb3c544a2def7862ad827f18589017ead7
   
    def list_artists
     Artist.all.sort_by(&:name).each.with_index(1) do |artist, index|
@@ -91,4 +111,9 @@ class MusicLibraryController
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0a41f2fb3c544a2def7862ad827f18589017ead7
 end
